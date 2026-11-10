@@ -1,10 +1,12 @@
 
 
-# escondete
+# escondete por siempre
 
-A Python game where the player must:
+A Python game where a monster has trapped Frank and his friend Max.
 
-Find Frank, who is hiding.
+The player must:
+
+Find Frank, who is hidden somewhere.
 
 Find his friend Max. 
 
