@@ -1,12 +1,12 @@
 
 
-# The rat
+# escondete
 
 A Python game where the player must:
 
-Find the sewer rat.
+Find Frank, who is hiding.
 
-Find its job.
+Find his friend Max. 
 
 Complete both objectives within a limited number of attempts.
 
