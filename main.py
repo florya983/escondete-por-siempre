@@ -10,49 +10,51 @@ def check_position(position):
   
 
 matrix=[
-    ["pig pen","sewer rat","supermarket"],
-    ["job","stable","cow"],
-    ["gaming room","restaurant","bull"],
+    ["Steve","Tom","Max"],
+    ["john","Michael","Brad"],
+    ["Frank","Robbie","George"],
 ]
-cellsewerrat="sewer rat"
-celljob="job"
+cellfrank="Frank"
+cellmax="Max"
 
 if __name__ == "__main__":
 
     attempts=0
-    print("""Welcome to RAT GOT A JOB GAME\n
-    You must find the sewer rat and then find its job on the grid.🏢\n
+    print("""😮‍💨 Escondete por siempre 😮‍💨"""\n
+    You must find Frank and then find his friend Max.🫠\n
     You have six attempts to win the game.😱\n
-    Good luck!\nThe rat is in one cell and its job is in another cell🤪 \n
-    [🐀🐀🐀] \n
-    [🐀🐀🐀 ]\n 
-    [🐀🐀🐀]\n 
+    Good luck!\n Frank is in one cell and his friend is in another cell🤪 \n
+    [👨‍🦰👨‍🦱👨‍🦳] \n
+    [👨🧔👱 ]\n 
+    [🧒👦🧔]\n 
     positions:\n
     1,2,3\n 
     4,5,6\n 
     7,8,9\n""")
 
     while attempts<6:
-        rat_position=int(input("Where do you think the sewer rat is?🐷\n"))
-        rat_result=check_position(rat_position)
-        if rat_result is None:
+        frank_position=int(input("Where do you think Frank is?\n"))
+        frank_result=check_position(frank_position)
+        if frank_result is None:
             continue
-        if rat_result==cellsewerrat:    
-            print(rat_result)
-            print("The rat is here! Let's go to its job!🐀🏃\n")
-            job_position=int(input("Where is the rat's job?🐷\n"))
-            job_result=check_position(job_position)
-            if job_result is None:
+        if frank_result==cellfrank:    
+            print(frank_result)
+            print("Frank is here! Let's go to find Max!, monster is close to🏃\n")
+            max_position=int(input("Where is Max?🥺\n"))
+            max_result=check_position(max_position)
+            if max_result is None:
                 continue
-            if job_result==celljob:
-                print("We arrived at the rat's job!!Congratulations You are the winner🎉🎉")
+            if max_result==cellmax:
+                print("Max is here!! Run away here, the monster coming for us!!")
                 break
-            if job_result!=celljob:
-                print("The job isn't here.Try again😨\n")
+            if max_result!=cellmax:
+                print("Max isn't here.Try again😨\n")
                 attempts+=1
-        if rat_result!=cellsewerrat:
+        if frank_result!=cellfrank:
             attempts+=1
-            print(rat_result)
-            print("The rat isn't here!Try again😨\n")
+            print(frank_result)
+            print("Frank isn't here!Try again😨\n")
         
     print("Game Over 😭")
+
+
