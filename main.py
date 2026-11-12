@@ -26,9 +26,10 @@ if __name__ == "__main__":
    You have six attempts to win the game.
    Good luck! Frank and Max are hiding in different cells.
 
-    [👨‍🦰👨‍🦱👨‍🦳] 
-    [👨🧔👱]
-    [🧒👦🧔]
+    [👨 🧔 👱] 
+    [👨 🧔 👱]
+    [🧒 👦 🧔]
+    
     positions:
     1,2,3 
     4,5,6 
