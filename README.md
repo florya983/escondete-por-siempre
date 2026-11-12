@@ -12,4 +12,4 @@ Find his friend Max.
 
 Complete both objectives within a limited number of attempts.
 
-
+Tests
