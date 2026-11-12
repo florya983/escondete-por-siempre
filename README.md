@@ -2,7 +2,7 @@
 
 # escondete por siempre
 
-A Python game where a monster has trapped Frank and his friend Max.
+Python game where a monster has trapped Frank and his friend Max.
 
 The player must:
 
