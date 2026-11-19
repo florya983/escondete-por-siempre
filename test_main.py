@@ -16,6 +16,10 @@ class TestCheckPosition(unittest.TestCase):
     def test_invalid_position(self):
         self.assertIsNone(check_position(10))
 
+    def test_invalid_negative_position(self):
+        self.assertIsNone(check_position(-1))
+    
+
 if __name__ == "__main__":
     unittest.main()
     
