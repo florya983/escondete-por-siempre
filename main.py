@@ -1,17 +1,11 @@
 
-def check_position(position):
-    if position<1 or position>9:
-       print("invalid position😵.Enter a number from 1 to 9.")
-       return None
-    row=(position-1) // 3
-    column=(position-1)%3            
-    return matrix[row][column]
-               
-  
+from funciones import check_position
+from funciones import find_frank
+from funciones import find_max        
 
 matrix=[
     ["Steve","Tom","Max"],
-    ["john","Michael","Brad"],
+    ["John","Michael","Brad"],
     ["Frank","Robbie","George"],
 ]
 cellfrank="Frank"
@@ -29,7 +23,6 @@ if __name__ == "__main__":
     [👨 🧔 👱] 
     [👨 🧔 👱]
     [🧒 👦 🧔]
-    
     positions:
     1,2,3 
     4,5,6 
@@ -38,34 +31,17 @@ if __name__ == "__main__":
 
     victory=False
     while attempts<6 and victory==False:
-        frank_position=int(input("Where do you think Frank is?\n"))
-        frank_result=check_position(frank_position)
-        if frank_result is None:
-            continue
-        if frank_result!=cellfrank:
-             attempts+=1
-             print(frank_result)
-             print("Frank isn't here! Try again!😨\n")   
-        if frank_result==cellfrank:    
-            print(frank_result)
-            print("You found Frank! Now let's find Max! The monster is getting closer!🏃\n")   
+        valfrank,attemptsfrank=find_frank(attempts,matrix,cellfrank,cellmax)
+        attempts=attemptsfrank
+        if valfrank:
             while attempts<6 and victory==False:
-                max_position=int(input("Where is Max?🥺\n"))
-                max_result=check_position(max_position)
-                if max_result is None:
-                    continue
-                if max_result==cellmax:
+                valmax,attemptsmax=find_max(attempts,matrix,cellfrank,cellmax)
+                attempts=attemptsmax
+                if valmax:
+                    print("Max is here!! Run! you escaped! Congratulations! 🙃🙃🙃")
                     victory=True
-                    break
-                if max_result!=cellmax:
-                    attempts+=1 
-                    print("Max isn't here yet! Try again!😨\n")
-if victory==False:
-    print("Game Over!😭") 
-else:
-    print("Max is here!! Run! you escaped! Congratulations! 🙃🙃🙃")
-
-
-  
-
+            if victory==false:
+                 print("Game over!!")
+           
+            
 
