@@ -1,0 +1,39 @@
+
+def check_position(position,matrix)-> str|None:
+    if position<1 or position>9:
+       print("invalid position😵.Enter a number from 1 to 9.")
+       return None
+    row=(position-1) // 3
+    column=(position-1)%3            
+    return matrix[row][column]
+
+def find_frank(attempts,matrix,cellfrank,cellmax) -> tuple[bool, int]:
+    frank_position=int(input("Where do you think Frank is?\n"))
+    frank_result=check_position(frank_position,matrix)
+    if frank_result is None:
+        return False,0
+    if frank_result!=cellfrank:
+        attempts+=1
+        print(frank_result)
+        print("Frank isn't here! Try again!😨\n") 
+        return False,attempts  
+    if frank_result==cellfrank:    
+        print(frank_result)
+        print("You found Frank! Now let's find Max! The monster is getting closer!🏃\n")  
+        return True,attempts
+
+def find_max(attempts,matrix,cellfrank,cellmax)-> tuple[bool, int]:
+    max_position=int(input("Where is Max?🥺\n"))
+    max_result=check_position(max_position,matrix)
+    if max_result is None:
+        return False,0
+    if max_result==cellmax:
+        victory=True
+        return True,attempts
+    if max_result!=cellmax:
+        attempts+=1 
+        print("Max isn't here yet! Try again!😨\n")
+        return False,attempts
+
+    
+
