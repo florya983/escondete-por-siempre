@@ -8,10 +8,14 @@ def check_position(position,matrix)-> str|None:
     return matrix[row][column]
 
 def find_frank(attempts,matrix,cellfrank,cellmax) -> tuple[bool, int]:
-    frank_position=int(input("Where do you think Frank is?\n"))
+    try:
+        frank_position=int(input("Where do you think Frank is?\n"))
+    except ValueError:
+        print("You must enter a number!")
+        return False,attempts
     frank_result=check_position(frank_position,matrix)
     if frank_result is None:
-        return False,0
+        return False,attempts
     if frank_result!=cellfrank:
         attempts+=1
         print(frank_result)
@@ -23,17 +27,25 @@ def find_frank(attempts,matrix,cellfrank,cellmax) -> tuple[bool, int]:
         return True,attempts
 
 def find_max(attempts,matrix,cellfrank,cellmax)-> tuple[bool, int]:
-    max_position=int(input("Where is Max?🥺\n"))
+    try:
+        max_position=int(input("Where is Max?🥺\n"))
+    except ValueError:
+        print("You must enter a number!")
+        return False,attempts
     max_result=check_position(max_position,matrix)
     if max_result is None:
-        return False,0
+        return False,attempts
     if max_result==cellmax:
-        victory=True
         return True,attempts
     if max_result!=cellmax:
         attempts+=1 
         print("Max isn't here yet! Try again!😨\n")
         return False,attempts
+
+    
+
+
+       
 
     
 
