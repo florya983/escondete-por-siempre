@@ -40,7 +40,7 @@ if __name__ == "__main__":
                 if valmax:
                     print("Max is here!! Run! you escaped! Congratulations! 🙃🙃🙃")
                     victory=True
-            if victory==false:
+            if victory==False:
                  print("Game over!!")
            
             
