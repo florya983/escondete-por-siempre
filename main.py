@@ -31,17 +31,19 @@ if __name__ == "__main__":
 
     victory=False
     while attempts<6 and victory==False:
-        valfrank,attemptsfrank=find_frank(attempts,matrix,cellfrank,cellmax)
+        valfrank,attemptsfrank=find_frank(attempts,matrix,cellfrank)
         attempts=attemptsfrank
         if valfrank:
             while attempts<6 and victory==False:
-                valmax,attemptsmax=find_max(attempts,matrix,cellfrank,cellmax)
+                valmax,attemptsmax=find_max(attempts,matrix,cellmax)
                 attempts=attemptsmax
                 if valmax:
                     print("Max is here!! Run! you escaped! Congratulations! 🙃🙃🙃")
                     victory=True
-            if victory==False:
-                 print("Game over!!")
+    if attempts==6:
+           print("Game over!!")    
+            
+
            
             
 
