@@ -7,7 +7,7 @@ def check_position(position,matrix)-> str|None:
     column=(position-1)%3            
     return matrix[row][column]
 
-def find_frank(attempts,matrix,cellfrank,cellmax) -> tuple[bool, int]:
+def find_frank(attempts,matrix,cellfrank) -> tuple[bool, int]:
     try:
         frank_position=int(input("Where do you think Frank is?\n"))
     except ValueError:
@@ -26,7 +26,7 @@ def find_frank(attempts,matrix,cellfrank,cellmax) -> tuple[bool, int]:
         print("You found Frank! Now let's find Max! The monster is getting closer!🏃\n")  
         return True,attempts
 
-def find_max(attempts,matrix,cellfrank,cellmax)-> tuple[bool, int]:
+def find_max(attempts,matrix,cellmax)-> tuple[bool, int]:
     try:
         max_position=int(input("Where is Max?🥺\n"))
     except ValueError:
@@ -41,6 +41,9 @@ def find_max(attempts,matrix,cellfrank,cellmax)-> tuple[bool, int]:
         attempts+=1 
         print("Max isn't here yet! Try again!😨\n")
         return False,attempts
+
+    
+
 
     
 
